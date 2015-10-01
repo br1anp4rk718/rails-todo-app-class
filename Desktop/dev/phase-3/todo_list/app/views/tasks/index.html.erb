@@ -1,9 +1,11 @@
 <h1>TODO LIST</h1>
-
+<div class= 'list'>
 <% @tasks.each do |each_task| %>
 	<p><%= each_task.description %>  Created at: <%= each_task.created_at %> <%= check_box_tag(:tasks) %><%= label_tag(:tasks, 'Done') %></p>
 	<%= link_to 'delete', task_path(each_task), method: :delete, data: { confirm: 'Are you sure?'} %>
 <% end %>
+</div>
 <br><br>
 <h2>You have <%= @tasks.count %> tasks left</h2>
 
+<div class='add'><p class='additem'><%= link_to 'Add Task', new_task_path %></p></div>
